@@ -49,11 +49,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtIdNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -78,12 +80,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(315, 2);
+            this.button1.Location = new System.Drawing.Point(315, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 26);
             this.button1.TabIndex = 14;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtsearch
             // 
@@ -233,11 +236,25 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "_______________";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::Libsys_Mercado.Properties.Resources.return_icon;
+            this.pictureBox6.Location = new System.Drawing.Point(2, 30);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(31, 29);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 37;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(347, 457);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtIdNumber);
             this.Controls.Add(this.label9);
@@ -266,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +311,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIdNumber;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

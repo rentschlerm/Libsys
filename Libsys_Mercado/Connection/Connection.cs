@@ -11,7 +11,7 @@ namespace Libsys_Mercado.Connection
     internal class Connection
     {
         public static SqlConnection con;
-        public static String dbconnect = "Data Source=(localDb)\\db;Initial Catalog=libsys;Integrated Security=True;Pooling=False "; //Connection String
+        public static String dbconnect = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=libsys;Integrated Security=True;Connect Timeout=30;Encrypt=False; "; //Connection String
 
         public static void DB()
         {

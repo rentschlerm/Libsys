@@ -62,6 +62,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -164,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(252, 254);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label6);

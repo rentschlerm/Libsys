@@ -54,6 +54,7 @@
             this.addABookpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addABookpbx.TabIndex = 0;
             this.addABookpbx.TabStop = false;
+            this.addABookpbx.Click += new System.EventHandler(this.addABookpbx_Click);
             // 
             // transactionpbx
             // 
@@ -66,6 +67,7 @@
             this.transactionpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.transactionpbx.TabIndex = 1;
             this.transactionpbx.TabStop = false;
+            this.transactionpbx.Click += new System.EventHandler(this.transactionpbx_Click);
             // 
             // reportspbx
             // 
@@ -78,6 +80,7 @@
             this.reportspbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.reportspbx.TabIndex = 1;
             this.reportspbx.TabStop = false;
+            this.reportspbx.Click += new System.EventHandler(this.reportspbx_Click);
             // 
             // exitpbx
             // 
@@ -89,6 +92,7 @@
             this.exitpbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exitpbx.TabIndex = 1;
             this.exitpbx.TabStop = false;
+            this.exitpbx.Click += new System.EventHandler(this.exitpbx_Click);
             // 
             // label1
             // 

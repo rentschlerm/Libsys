@@ -19,19 +19,9 @@ namespace Libsys_Mercado
         {
             InitializeComponent();
         }
-
+        Encryption_Decryption encrypt_decryption = new Encryption_Decryption();
        
-        public static string encryptpassword(string password)
-        {
-            string encryptedpassword = "";
-            foreach (char c in password)
-            {
-                int asciiValue = (int)c;
-                asciiValue += 2;
-                encryptedpassword += (char)asciiValue;
-            }
-            return encryptedpassword;
-        }
+       
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -53,7 +43,7 @@ namespace Libsys_Mercado
                     else
                     {
                         Connection.Connection.DB();
-                        Function.Function.gen = "Insert into users values('" + txtusername.Text + "','" + encryptpassword(txtpassword.Text) + "')";
+                        Function.Function.gen = "Insert into users values('" + txtusername.Text + "','" + encrypt_decryption.Encrypt(txtpassword.Text.Trim()) + "')";
                         Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                         Function.Function.command.ExecuteNonQuery();
                         MessageBox.Show("You can now log in with your account", "Login", MessageBoxButtons.OK);
@@ -75,17 +65,16 @@ namespace Libsys_Mercado
                 }
                 Connection.Connection.con.Close();
 
-
-                //  Filldata2();
-                /* this.Close();
-                 Dashboard main = new Dashboard();
-                 main.Show();*/
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

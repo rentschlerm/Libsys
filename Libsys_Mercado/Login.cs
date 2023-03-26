@@ -17,42 +17,47 @@ namespace Libsys_Mercado
         {
             InitializeComponent();
         }
-
+        Encryption_Decryption encrypt_decryption = new Encryption_Decryption();
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "SELECT username, password FROM users WHERE username = '" + txtusername + "'";
+                Function.Function.gen = "SELECT * FROM users WHERE username = '" + txtusername.Text + "'";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                 Function.Function.reader = Function.Function.command.ExecuteReader();
-                if (Function.Function.reader.Read())
-                {
-                    string encryptedPassword = Function.Function.reader.GetString(1);
-                    string decryptedPassword = decryptPassword(encryptedPassword);
 
-                    if ((decryptedPassword == txtpassword.Text))
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+                    string decryptedPassword = encrypt_decryption.Decrypt(Function.Function.reader["password"].ToString());
+
+                    if (decryptedPassword == txtpassword.Text)
                     {
                         MessageBox.Show("Welcome Home!");
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
                         this.Hide();
 
                     }
-                    else
+                    else if (decryptedPassword != txtpassword.Text)
                     {
                         MessageBox.Show("Username and password doesn't match!", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         txtusername.Clear();
                         txtpassword.Clear();
                         txtusername.Focus();
                     }
-                }
-                else
-                {
-                    DialogResult response = MessageBox.Show("User Account doesn't exist. Proceed to Register?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (response == DialogResult.Yes)
+                    else
                     {
-                        new Register().Show();
-                        this.Hide();
+                        DialogResult response = MessageBox.Show("User Account doesn't exist. Proceed to Register?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (response == DialogResult.Yes)
+                        {
+                            new Register().Show();
+                            this.Hide();
+                        }
                     }
                 }
             }
@@ -64,22 +69,17 @@ namespace Libsys_Mercado
            
 
         }
-        public static string decryptPassword(string encryptedPassword)
-        {
-            string decryptedPassword = "";
-            foreach (char c in encryptedPassword)
-            {
-                int asciiValue = (int)c;
-                asciiValue -= 2;
-                decryptedPassword += (char)asciiValue;
-            }
-            return decryptedPassword;
-        }
+        
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Register().Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -27,5 +27,29 @@ namespace Libsys_Mercado
                 this.Region = new Region(gp);
             }
         }
+
+        private void addABookpbx_Click(object sender, EventArgs e)
+        {
+            Books book = new Books();
+            book.Show();
+            this.Hide();
+        }
+
+        private void transactionpbx_Click(object sender, EventArgs e)
+        {
+            Borrow borrow = new Borrow();
+            borrow.Show();
+            this.Hide();
+        }
+
+        private void reportspbx_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitpbx_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
