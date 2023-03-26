@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
-            this.txtAccessionNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cmbAccessionNumber = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -59,22 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtAccessionNumber
-            // 
-            this.txtAccessionNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAccessionNumber.Location = new System.Drawing.Point(181, 99);
-            this.txtAccessionNumber.Name = "txtAccessionNumber";
-            this.txtAccessionNumber.Size = new System.Drawing.Size(94, 13);
-            this.txtAccessionNumber.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(178, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "_______________";
+            this.label1.Text = "__________";
             // 
             // label2
             // 
@@ -249,12 +241,22 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
+            // cmbAccessionNumber
+            // 
+            this.cmbAccessionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAccessionNumber.FormattingEnabled = true;
+            this.cmbAccessionNumber.Location = new System.Drawing.Point(181, 94);
+            this.cmbAccessionNumber.Name = "cmbAccessionNumber";
+            this.cmbAccessionNumber.Size = new System.Drawing.Size(80, 21);
+            this.cmbAccessionNumber.TabIndex = 17;
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(341, 409);
+            this.Controls.Add(this.cmbAccessionNumber);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pbSearch);
             this.Controls.Add(this.txtsearch);
@@ -271,7 +273,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtAccessionNumber);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Books";
@@ -291,8 +292,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtAccessionNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -312,5 +311,6 @@
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox cmbAccessionNumber;
     }
 }

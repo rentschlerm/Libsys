@@ -26,7 +26,7 @@ namespace Libsys_Mercado
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Libsys_Mercado
                 var gen = MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (gen == DialogResult.Yes)
                 {
-                    Function.Function.gen = "Delete from Book where accession_number = " + txtAccessionNumber.Text + "";
+                    Function.Function.gen = "Delete from Book where accession_number = " + cmbAccessionNumber.Text + "";
                     Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                     Function.Function.command.ExecuteNonQuery();
                     Connection.Connection.con.Close();
@@ -110,7 +110,7 @@ namespace Libsys_Mercado
         {
             try
             {
-                txtAccessionNumber.Text = dgvBook[0, e.RowIndex].Value.ToString();
+                cmbAccessionNumber.Text = dgvBook[0, e.RowIndex].Value.ToString();
                 txtTitle.Text = dgvBook[1, e.RowIndex].Value.ToString();
                 txtAuthor.Text = dgvBook[2, e.RowIndex].Value.ToString();
             }
