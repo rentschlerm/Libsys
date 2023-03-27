@@ -39,14 +39,24 @@ namespace Libsys_Mercado
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "Insert into Book values('"+txtTitle.Text+"','"+txtAuthor.Text+"')";
+
+                Function.Function.gen = "Select * from Book where accession_number = '"+cmbAccessionNumber.Text+"'";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                 Function.Function.command.ExecuteNonQuery();
-                MessageBox.Show("Book successfully added!", "Login", MessageBoxButtons.OK);
-                
-                Connection.Connection.con.Close();
 
-                Fill();
+                if (Function.Function.gen == null)
+                {
+                    Function.Function.gen = "Insert into Book (title,author,quantity)values('" + txtTitle.Text + "','" + txtAuthor.Text + "','" + txtQty.Text + "')";
+                    Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
+                    Function.Function.command.ExecuteNonQuery();
+                    MessageBox.Show("Book successfully added!", "Added", MessageBoxButtons.OK);
+                    Fill();
+                }
+                else if(Function.Function.command != null)
+                {
+                    MessageBox.Show("Please Try Again", "Try Again", MessageBoxButtons.OK);
+                }
+                Connection.Connection.con.Close();
 
             }
             catch (Exception ex)
@@ -113,6 +123,7 @@ namespace Libsys_Mercado
                 cmbAccessionNumber.Text = dgvBook[0, e.RowIndex].Value.ToString();
                 txtTitle.Text = dgvBook[1, e.RowIndex].Value.ToString();
                 txtAuthor.Text = dgvBook[2, e.RowIndex].Value.ToString();
+                txtQty.Text = dgvBook[3, e.RowIndex].Value.ToString();
             }
             catch (Exception ex)
             {

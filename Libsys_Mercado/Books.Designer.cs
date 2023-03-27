@@ -49,6 +49,9 @@
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.cmbAccessionNumber = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -62,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 103);
+            this.label1.Location = new System.Drawing.Point(178, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
@@ -71,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 99);
+            this.label2.Location = new System.Drawing.Point(45, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 2;
@@ -80,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(178, 132);
+            this.label3.Location = new System.Drawing.Point(178, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 1;
@@ -89,7 +92,7 @@
             // txtTitle
             // 
             this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTitle.Location = new System.Drawing.Point(181, 128);
+            this.txtTitle.Location = new System.Drawing.Point(181, 102);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(94, 13);
             this.txtTitle.TabIndex = 0;
@@ -97,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 128);
+            this.label4.Location = new System.Drawing.Point(45, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 2;
@@ -106,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(178, 162);
+            this.label5.Location = new System.Drawing.Point(178, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 1;
@@ -115,7 +118,7 @@
             // txtAuthor
             // 
             this.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAuthor.Location = new System.Drawing.Point(181, 158);
+            this.txtAuthor.Location = new System.Drawing.Point(181, 132);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(94, 13);
             this.txtAuthor.TabIndex = 0;
@@ -123,7 +126,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 158);
+            this.label6.Location = new System.Drawing.Point(45, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 2;
@@ -245,10 +248,36 @@
             // 
             this.cmbAccessionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbAccessionNumber.FormattingEnabled = true;
-            this.cmbAccessionNumber.Location = new System.Drawing.Point(181, 94);
+            this.cmbAccessionNumber.Location = new System.Drawing.Point(181, 68);
             this.cmbAccessionNumber.Name = "cmbAccessionNumber";
             this.cmbAccessionNumber.Size = new System.Drawing.Size(80, 21);
             this.cmbAccessionNumber.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(45, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Quantity";
+            // 
+            // txtQty
+            // 
+            this.txtQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQty.Location = new System.Drawing.Point(181, 162);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(94, 13);
+            this.txtQty.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(178, 166);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "_______________";
             // 
             // Books
             // 
@@ -256,6 +285,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(341, 409);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtQty);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbAccessionNumber);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pbSearch);
@@ -276,6 +308,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Books";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
@@ -312,5 +345,8 @@
         private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ComboBox cmbAccessionNumber;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label label9;
     }
 }
