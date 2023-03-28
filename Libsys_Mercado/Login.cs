@@ -35,7 +35,7 @@ namespace Libsys_Mercado
 
                     if (decryptedPassword == txtpassword.Text)
                     {
-                        MessageBox.Show("Welcome Home!");
+                        
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
                         this.Hide();

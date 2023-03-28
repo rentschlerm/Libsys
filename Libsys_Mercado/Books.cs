@@ -40,22 +40,13 @@ namespace Libsys_Mercado
             {
                 Connection.Connection.DB();
 
-                Function.Function.gen = "Select * from Book where accession_number = '"+cmbAccessionNumber.Text+"'";
+               
+                Function.Function.gen = "Insert into Book (title,author,quantity)values('" + txtTitle.Text + "','" + txtAuthor.Text + "','" + txtQty.Text + "')";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                 Function.Function.command.ExecuteNonQuery();
-
-                if (Function.Function.gen == null)
-                {
-                    Function.Function.gen = "Insert into Book (title,author,quantity)values('" + txtTitle.Text + "','" + txtAuthor.Text + "','" + txtQty.Text + "')";
-                    Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
-                    Function.Function.command.ExecuteNonQuery();
-                    MessageBox.Show("Book successfully added!", "Added", MessageBoxButtons.OK);
-                    Fill();
-                }
-                else if(Function.Function.command != null)
-                {
-                    MessageBox.Show("Please Try Again", "Try Again", MessageBoxButtons.OK);
-                }
+                MessageBox.Show("Book successfully added!", "Added", MessageBoxButtons.OK);
+                Fill();
+                
                 Connection.Connection.con.Close();
 
             }
@@ -69,6 +60,10 @@ namespace Libsys_Mercado
         private void pbRefresh_Click(object sender, EventArgs e)
         {
             Fill();
+            cmbAccessionNumber.Text = " ";
+            txtAuthor.Text = " ";
+            txtTitle.Text = " ";
+            txtQty.Text = " ";
         }
 
         private void pbDelete_Click(object sender, EventArgs e)
@@ -98,7 +93,7 @@ namespace Libsys_Mercado
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "Update Book Set title = '" + txtTitle.Text + "', author = '" + txtAuthor + "'";
+                Function.Function.gen = "Update Book Set title = '" + txtTitle.Text + "', author = '" + txtAuthor.Text + "', quantity = '"+txtQty.Text+"' where accession_number = '"+cmbAccessionNumber.Text+"'";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                 Function.Function.command.ExecuteNonQuery();
                 Connection.Connection.con.Close();
@@ -143,6 +138,13 @@ namespace Libsys_Mercado
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Books_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'libsysDataSetBook.Book' table. You can move, or remove it, as needed.
+            this.bookTableAdapter.Fill(this.libsysDataSetBook.Book);
+
         }
     }
 }

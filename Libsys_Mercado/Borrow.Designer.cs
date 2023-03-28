@@ -28,45 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Borrow));
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvBook = new System.Windows.Forms.DataGridView();
+            this.dgvBorrow = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIdNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.pbRefresh = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pboxReturn = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pboxBorrow = new System.Windows.Forms.PictureBox();
+            this.cmbAccessionNumber = new System.Windows.Forms.ComboBox();
+            this.libsysDataSetBook = new Libsys_Mercado.libsysDataSetBook();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookTableAdapter = new Libsys_Mercado.libsysDataSetBookTableAdapters.BookTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBorrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libsysDataSetBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(124, 226);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(21, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 32;
-            this.pictureBox5.TabStop = false;
             // 
             // label7
             // 
@@ -104,13 +102,13 @@
             this.panel1.Size = new System.Drawing.Size(343, 28);
             this.panel1.TabIndex = 30;
             // 
-            // dgvBook
+            // dgvBorrow
             // 
-            this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBook.Location = new System.Drawing.Point(14, 252);
-            this.dgvBook.Name = "dgvBook";
-            this.dgvBook.Size = new System.Drawing.Size(319, 150);
-            this.dgvBook.TabIndex = 29;
+            this.dgvBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBorrow.Location = new System.Drawing.Point(14, 252);
+            this.dgvBorrow.Name = "dgvBorrow";
+            this.dgvBorrow.Size = new System.Drawing.Size(319, 150);
+            this.dgvBorrow.TabIndex = 29;
             // 
             // label6
             // 
@@ -139,13 +137,13 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Accession Number";
             // 
-            // textBox3
+            // txtAuthor
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(185, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 13);
-            this.textBox3.TabIndex = 17;
+            this.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAuthor.Location = new System.Drawing.Point(185, 163);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(94, 13);
+            this.txtAuthor.TabIndex = 17;
             // 
             // label5
             // 
@@ -156,13 +154,13 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "_______________";
             // 
-            // textBox2
+            // txtTitle
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(185, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 13);
-            this.textBox2.TabIndex = 16;
+            this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitle.Location = new System.Drawing.Point(185, 133);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(94, 13);
+            this.txtTitle.TabIndex = 16;
             // 
             // label3
             // 
@@ -173,42 +171,14 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "_______________";
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(185, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 13);
-            this.textBox1.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(182, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "_______________";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(229, 201);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(270, 201);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            this.label1.Text = "__________";
             // 
             // label8
             // 
@@ -236,6 +206,17 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "_______________";
             // 
+            // pbRefresh
+            // 
+            this.pbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pbRefresh.Image")));
+            this.pbRefresh.Location = new System.Drawing.Point(185, 201);
+            this.pbRefresh.Name = "pbRefresh";
+            this.pbRefresh.Size = new System.Drawing.Size(28, 25);
+            this.pbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbRefresh.TabIndex = 38;
+            this.pbRefresh.TabStop = false;
+            this.pbRefresh.Click += new System.EventHandler(this.pbRefresh_Click);
+            // 
             // pictureBox6
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -248,42 +229,105 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
+            // pboxReturn
+            // 
+            this.pboxReturn.Image = ((System.Drawing.Image)(resources.GetObject("pboxReturn.Image")));
+            this.pboxReturn.Location = new System.Drawing.Point(270, 201);
+            this.pboxReturn.Name = "pboxReturn";
+            this.pboxReturn.Size = new System.Drawing.Size(24, 25);
+            this.pboxReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxReturn.TabIndex = 33;
+            this.pboxReturn.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(124, 226);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(21, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 32;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pboxBorrow
+            // 
+            this.pboxBorrow.Image = ((System.Drawing.Image)(resources.GetObject("pboxBorrow.Image")));
+            this.pboxBorrow.Location = new System.Drawing.Point(229, 201);
+            this.pboxBorrow.Name = "pboxBorrow";
+            this.pboxBorrow.Size = new System.Drawing.Size(24, 25);
+            this.pboxBorrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxBorrow.TabIndex = 28;
+            this.pboxBorrow.TabStop = false;
+            this.pboxBorrow.Click += new System.EventHandler(this.pboxBorrow_Click);
+            // 
+            // cmbAccessionNumber
+            // 
+            this.cmbAccessionNumber.DataSource = this.bookBindingSource;
+            this.cmbAccessionNumber.DisplayMember = "accession_number";
+            this.cmbAccessionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAccessionNumber.FormattingEnabled = true;
+            this.cmbAccessionNumber.Location = new System.Drawing.Point(185, 98);
+            this.cmbAccessionNumber.Name = "cmbAccessionNumber";
+            this.cmbAccessionNumber.Size = new System.Drawing.Size(80, 21);
+            this.cmbAccessionNumber.TabIndex = 39;
+            this.cmbAccessionNumber.ValueMember = "accession_number";
+            this.cmbAccessionNumber.TextChanged += new System.EventHandler(this.cmbAccessionNumber_TextChanged);
+            // 
+            // libsysDataSetBook
+            // 
+            this.libsysDataSetBook.DataSetName = "libsysDataSetBook";
+            this.libsysDataSetBook.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataMember = "Book";
+            this.bookBindingSource.DataSource = this.libsysDataSetBook;
+            // 
+            // bookTableAdapter
+            // 
+            this.bookTableAdapter.ClearBeforeFill = true;
+            // 
             // Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(347, 457);
+            this.Controls.Add(this.cmbAccessionNumber);
+            this.Controls.Add(this.pbRefresh);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtIdNumber);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pboxReturn);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvBook);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.dgvBorrow);
+            this.Controls.Add(this.pboxBorrow);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Borrow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrow";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.Load += new System.EventHandler(this.Borrow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxBorrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libsysDataSetBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,21 +340,25 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvBook;
+        private System.Windows.Forms.DataGridView dgvBorrow;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pboxBorrow;
+        private System.Windows.Forms.PictureBox pboxReturn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIdNumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pbRefresh;
+        private System.Windows.Forms.ComboBox cmbAccessionNumber;
+        private libsysDataSetBook libsysDataSetBook;
+        private System.Windows.Forms.BindingSource bookBindingSource;
+        private libsysDataSetBookTableAdapters.BookTableAdapter bookTableAdapter;
     }
 }

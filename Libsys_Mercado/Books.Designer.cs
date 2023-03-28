@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +53,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.libsysDataSetBook = new Libsys_Mercado.libsysDataSetBook();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookTableAdapter = new Libsys_Mercado.libsysDataSetBookTableAdapters.BookTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -60,6 +64,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libsysDataSetBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -246,12 +252,14 @@
             // 
             // cmbAccessionNumber
             // 
+            this.cmbAccessionNumber.DataSource = this.bookBindingSource;
             this.cmbAccessionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbAccessionNumber.FormattingEnabled = true;
             this.cmbAccessionNumber.Location = new System.Drawing.Point(181, 68);
             this.cmbAccessionNumber.Name = "cmbAccessionNumber";
             this.cmbAccessionNumber.Size = new System.Drawing.Size(80, 21);
             this.cmbAccessionNumber.TabIndex = 17;
+            this.cmbAccessionNumber.ValueMember = "accession_number";
             // 
             // label8
             // 
@@ -278,6 +286,20 @@
             this.label9.Size = new System.Drawing.Size(97, 13);
             this.label9.TabIndex = 19;
             this.label9.Text = "_______________";
+            // 
+            // libsysDataSetBook
+            // 
+            this.libsysDataSetBook.DataSetName = "libsysDataSetBook";
+            this.libsysDataSetBook.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataMember = "Book";
+            this.bookBindingSource.DataSource = this.libsysDataSetBook;
+            // 
+            // bookTableAdapter
+            // 
+            this.bookTableAdapter.ClearBeforeFill = true;
             // 
             // Books
             // 
@@ -310,6 +332,7 @@
             this.Name = "Books";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
+            this.Load += new System.EventHandler(this.Books_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
@@ -319,6 +342,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libsysDataSetBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +362,7 @@
         private System.Windows.Forms.PictureBox pbDelete;
         private System.Windows.Forms.PictureBox pbAdd;
         private System.Windows.Forms.PictureBox pbEdit;
-        private System.Windows.Forms.DataGridView dgvBook;
+        protected System.Windows.Forms.DataGridView dgvBook;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
@@ -348,5 +373,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label9;
+        private libsysDataSetBook libsysDataSetBook;
+        private System.Windows.Forms.BindingSource bookBindingSource;
+        private libsysDataSetBookTableAdapters.BookTableAdapter bookTableAdapter;
     }
 }
