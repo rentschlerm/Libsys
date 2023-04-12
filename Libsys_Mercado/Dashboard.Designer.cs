@@ -124,11 +124,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(441, 86);
+            this.label4.Location = new System.Drawing.Point(433, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 13);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Exit";
+            this.label4.Text = "Logout";
             // 
             // Dashboard
             // 

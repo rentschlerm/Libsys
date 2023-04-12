@@ -16,7 +16,7 @@ namespace Libsys_Mercado
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Borrow());
+            Application.Run(new Login());
         }
     }
 }

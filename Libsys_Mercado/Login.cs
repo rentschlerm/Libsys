@@ -79,7 +79,41 @@ namespace Libsys_Mercado
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void txtpassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Clear();
+                txtpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtusername_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtusername.Text == "UserName")
+            {
+                txtusername.Clear();
+            }
+        }
+
+        private void txtpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Clear();
+                txtpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnLogin_Click(sender, EventArgs.Empty);
+            }
         }
     }
 }

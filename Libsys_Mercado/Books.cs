@@ -46,7 +46,7 @@ namespace Libsys_Mercado
                 Function.Function.command.ExecuteNonQuery();
                 MessageBox.Show("Book successfully added!", "Added", MessageBoxButtons.OK);
                 Fill();
-                
+                this.bookTableAdapter.Fill(this.libsysDataSetBook.Book);
                 Connection.Connection.con.Close();
 
             }
@@ -60,6 +60,7 @@ namespace Libsys_Mercado
         private void pbRefresh_Click(object sender, EventArgs e)
         {
             Fill();
+            this.bookTableAdapter.Fill(this.libsysDataSetBook.Book);
             cmbAccessionNumber.Text = " ";
             txtAuthor.Text = " ";
             txtTitle.Text = " ";
@@ -80,6 +81,7 @@ namespace Libsys_Mercado
                     Connection.Connection.con.Close();
                     MessageBox.Show("It has been deleted!", "Update Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Fill();
+                    this.bookTableAdapter.Fill(this.libsysDataSetBook.Book);
                 }
             }
             catch (Exception ex)
@@ -99,6 +101,7 @@ namespace Libsys_Mercado
                 Connection.Connection.con.Close();
                 MessageBox.Show("It has been updated!", "Update Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Fill();
+                this.bookTableAdapter.Fill(this.libsysDataSetBook.Book);
             }
             catch (Exception ex)
             {

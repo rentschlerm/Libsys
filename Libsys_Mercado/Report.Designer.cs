@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.pbarBooks = new CircularProgressBar.CircularProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pbarBorrowed = new CircularProgressBar.CircularProgressBar();
-            this.pbarLost = new CircularProgressBar.CircularProgressBar();
+            this.pbarReturned = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.pboxReturnToDashboard = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturnToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // pbarBooks
@@ -83,17 +87,6 @@
             this.panel1.Size = new System.Drawing.Size(806, 30);
             this.panel1.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(779, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -104,6 +97,23 @@
             this.label7.Size = new System.Drawing.Size(75, 23);
             this.label7.TabIndex = 15;
             this.label7.Text = "Reports";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(779, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 26);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "x";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pbarBorrowed
             // 
@@ -136,36 +146,36 @@
             this.pbarBorrowed.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.pbarBorrowed.Value = 68;
             // 
-            // pbarLost
+            // pbarReturned
             // 
-            this.pbarLost.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pbarLost.AnimationSpeed = 500;
-            this.pbarLost.BackColor = System.Drawing.Color.Transparent;
-            this.pbarLost.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
-            this.pbarLost.ForeColor = System.Drawing.Color.White;
-            this.pbarLost.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.pbarLost.InnerMargin = 2;
-            this.pbarLost.InnerWidth = -1;
-            this.pbarLost.Location = new System.Drawing.Point(554, 76);
-            this.pbarLost.MarqueeAnimationSpeed = 2000;
-            this.pbarLost.Name = "pbarLost";
-            this.pbarLost.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.pbarLost.OuterMargin = -18;
-            this.pbarLost.OuterWidth = 18;
-            this.pbarLost.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pbarLost.ProgressWidth = 18;
-            this.pbarLost.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pbarLost.Size = new System.Drawing.Size(198, 202);
-            this.pbarLost.StartAngle = 270;
-            this.pbarLost.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pbarLost.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.pbarLost.SubscriptText = "";
-            this.pbarLost.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pbarLost.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.pbarLost.SuperscriptText = "";
-            this.pbarLost.TabIndex = 3;
-            this.pbarLost.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.pbarLost.Value = 68;
+            this.pbarReturned.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.pbarReturned.AnimationSpeed = 500;
+            this.pbarReturned.BackColor = System.Drawing.Color.Transparent;
+            this.pbarReturned.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.pbarReturned.ForeColor = System.Drawing.Color.White;
+            this.pbarReturned.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.pbarReturned.InnerMargin = 2;
+            this.pbarReturned.InnerWidth = -1;
+            this.pbarReturned.Location = new System.Drawing.Point(554, 76);
+            this.pbarReturned.MarqueeAnimationSpeed = 2000;
+            this.pbarReturned.Name = "pbarReturned";
+            this.pbarReturned.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.pbarReturned.OuterMargin = -18;
+            this.pbarReturned.OuterWidth = 18;
+            this.pbarReturned.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.pbarReturned.ProgressWidth = 18;
+            this.pbarReturned.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbarReturned.Size = new System.Drawing.Size(198, 202);
+            this.pbarReturned.StartAngle = 270;
+            this.pbarReturned.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.pbarReturned.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.pbarReturned.SubscriptText = "";
+            this.pbarReturned.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.pbarReturned.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.pbarReturned.SuperscriptText = "";
+            this.pbarReturned.TabIndex = 3;
+            this.pbarReturned.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.pbarReturned.Value = 68;
             // 
             // label1
             // 
@@ -196,33 +206,59 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(630, 299);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 19);
+            this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 18;
-            this.label3.Text = "Lost";
+            this.label3.Text = "Returned";
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // pboxReturnToDashboard
+            // 
+            this.pboxReturnToDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboxReturnToDashboard.Image = global::Libsys_Mercado.Properties.Resources.return_icon;
+            this.pboxReturnToDashboard.Location = new System.Drawing.Point(3, 35);
+            this.pboxReturnToDashboard.Name = "pboxReturnToDashboard";
+            this.pboxReturnToDashboard.Size = new System.Drawing.Size(31, 29);
+            this.pboxReturnToDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxReturnToDashboard.TabIndex = 41;
+            this.pboxReturnToDashboard.TabStop = false;
+            this.pboxReturnToDashboard.Click += new System.EventHandler(this.pboxReturnToDashboard_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pboxReturnToDashboard);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbarLost);
+            this.Controls.Add(this.pbarReturned);
             this.Controls.Add(this.pbarBorrowed);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbarBooks);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturnToDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,10 +271,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private CircularProgressBar.CircularProgressBar pbarBorrowed;
-        private CircularProgressBar.CircularProgressBar pbarLost;
+        private CircularProgressBar.CircularProgressBar pbarReturned;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.PictureBox pboxReturnToDashboard;
     }
 }

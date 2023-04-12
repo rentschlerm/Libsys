@@ -76,5 +76,64 @@ namespace Libsys_Mercado
         {
             this.Close();
         }
+
+        private void pboxReturnToDashboard_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void txtpassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Clear();
+                txtpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtconpassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtconpassword.Text == "RetypePassword")
+            {
+                txtconpassword.Clear();
+                txtconpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtusername_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txtusername.Text == "UserName")
+            {
+                txtusername.Clear();
+            }
+        }
+
+        private void txtpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtpassword.Text == "Password")
+            {
+                txtpassword.Clear();
+                txtpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtconpassword_Enter(object sender, EventArgs e)
+        {
+            if (txtconpassword.Text == "RetypePassword")
+            {
+                txtconpassword.Clear();
+                txtconpassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtconpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnSubmit_Click(sender,EventArgs.Empty);
+            }
+        }
     }
 }

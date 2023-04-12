@@ -44,11 +44,15 @@ namespace Libsys_Mercado
 
         private void reportspbx_Click(object sender, EventArgs e)
         {
-
+            Report report = new Report();
+            report.Show();
+            this.Close();
         }
 
         private void exitpbx_Click(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
     }

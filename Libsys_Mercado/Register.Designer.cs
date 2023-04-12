@@ -35,13 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtconpassword = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pboxReturnToDashboard = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturnToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -76,15 +75,18 @@
             // txtpassword
             // 
             this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtpassword.Location = new System.Drawing.Point(132, 134);
+            this.txtpassword.Location = new System.Drawing.Point(78, 123);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(94, 13);
-            this.txtpassword.TabIndex = 16;
+            this.txtpassword.TabIndex = 1;
+            this.txtpassword.Text = "Password";
+            this.txtpassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtpassword_MouseClick);
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(129, 138);
+            this.label3.Location = new System.Drawing.Point(75, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 19;
@@ -93,44 +95,28 @@
             // txtusername
             // 
             this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtusername.Location = new System.Drawing.Point(132, 105);
+            this.txtusername.Location = new System.Drawing.Point(78, 94);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(94, 13);
-            this.txtusername.TabIndex = 17;
+            this.txtusername.TabIndex = 0;
+            this.txtusername.Text = "UserName";
+            this.txtusername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtusername_MouseClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 109);
+            this.label1.Location = new System.Drawing.Point(75, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "_______________";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Username";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Password";
             // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(83, 219);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 22;
+            this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -138,7 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(129, 163);
+            this.label5.Location = new System.Drawing.Point(75, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 19;
@@ -147,19 +133,26 @@
             // txtconpassword
             // 
             this.txtconpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtconpassword.Location = new System.Drawing.Point(132, 159);
+            this.txtconpassword.Location = new System.Drawing.Point(78, 148);
             this.txtconpassword.Name = "txtconpassword";
             this.txtconpassword.Size = new System.Drawing.Size(94, 13);
-            this.txtconpassword.TabIndex = 16;
+            this.txtconpassword.TabIndex = 2;
+            this.txtconpassword.Text = "RetypePassword";
+            this.txtconpassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtconpassword_MouseClick);
+            this.txtconpassword.Enter += new System.EventHandler(this.txtconpassword_Enter);
+            this.txtconpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtconpassword_KeyDown);
             // 
-            // label6
+            // pboxReturnToDashboard
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Confirm Password";
+            this.pboxReturnToDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboxReturnToDashboard.Image = global::Libsys_Mercado.Properties.Resources.return_icon;
+            this.pboxReturnToDashboard.Location = new System.Drawing.Point(3, 27);
+            this.pboxReturnToDashboard.Name = "pboxReturnToDashboard";
+            this.pboxReturnToDashboard.Size = new System.Drawing.Size(31, 29);
+            this.pboxReturnToDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxReturnToDashboard.TabIndex = 42;
+            this.pboxReturnToDashboard.TabStop = false;
+            this.pboxReturnToDashboard.Click += new System.EventHandler(this.pboxReturnToDashboard_Click);
             // 
             // Register
             // 
@@ -167,10 +160,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(252, 254);
+            this.Controls.Add(this.pboxReturnToDashboard);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtconpassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtpassword);
@@ -184,6 +175,7 @@
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxReturnToDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,11 +190,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtconpassword;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pboxReturnToDashboard;
     }
 }
