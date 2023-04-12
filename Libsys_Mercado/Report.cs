@@ -90,7 +90,7 @@ namespace Libsys_Mercado
             try
             {
                 pbarReturned.Value = 0;
-                 Connection.Connection.DB();
+                Connection.Connection.DB();
                 Function.Function.gen = "SELECT COUNT(borrowerId) AS Number_of_Books_Returned FROM Borrowed Where status = 'Returned' ";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
                 Function.Function.reader = Function.Function.command.ExecuteReader();
@@ -125,6 +125,18 @@ namespace Libsys_Mercado
             pboxReturnToDashboard.Visible = false;
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Are you sure you want to delete the record for Returned books?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (response == DialogResult.Yes)
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "Delete From Borrowed Where status = 'Returned'";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.con);
+                Function.Function.command.ExecuteNonQuery();
+                Function.Function.reader.Close();
+            }
+        }
     }
 }

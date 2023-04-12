@@ -42,6 +42,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pboxReturnToDashboard = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxReturnToDashboard)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pboxReturnToDashboard);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(-5, -1);
@@ -90,11 +92,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 4);
+            this.label7.Location = new System.Drawing.Point(368, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 23);
+            this.label7.Size = new System.Drawing.Size(99, 31);
             this.label7.TabIndex = 15;
             this.label7.Text = "Reports";
             // 
@@ -229,13 +231,23 @@
             // 
             this.pboxReturnToDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxReturnToDashboard.Image = global::Libsys_Mercado.Properties.Resources.return_icon;
-            this.pboxReturnToDashboard.Location = new System.Drawing.Point(3, 35);
+            this.pboxReturnToDashboard.Location = new System.Drawing.Point(3, -1);
             this.pboxReturnToDashboard.Name = "pboxReturnToDashboard";
             this.pboxReturnToDashboard.Size = new System.Drawing.Size(31, 29);
             this.pboxReturnToDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxReturnToDashboard.TabIndex = 41;
             this.pboxReturnToDashboard.TabStop = false;
             this.pboxReturnToDashboard.Click += new System.EventHandler(this.pboxReturnToDashboard_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(619, 336);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Clear/Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Report
             // 
@@ -244,7 +256,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pboxReturnToDashboard);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.PictureBox pboxReturnToDashboard;
+        private System.Windows.Forms.Button button2;
     }
 }
